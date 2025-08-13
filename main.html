@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stripe Payment Template</title>
+    <style>
+      /* --- General Body & Container --- */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 15px;
+      }
+      .container {
+        max-width: 350px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* --- Typography Styles --- */
+      h2 {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 10px; /* Reduced margin to bring status closer */
+        color: #333;
+        font-size: 24px; /* A bit bigger */
+      }
+      p {
+        color: #6c757d;
+        text-align: center;
+        font-size: 14px; /* A bit bigger for readability */
+        line-height: 1.5;
+      }
+
+      /* --- UI Blocks & Placeholders --- */
+      .content-block {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .promo-box {
+        border: 1px solid;
+        border-radius: 4px;
+        padding: 10px;
+      }
+      .promo-box-discount {
+        border-color: #ffd700;
+      }
+      .promo-box-free {
+        border-color: #28a745;
+      }
+
+      /* --- Text & Messaging --- */
+      .error-message {
+        color: #dc3545;
+        text-align: center;
+        font-weight: bold;
+      }
+      .promo-message {
+        font-weight: bold;
+        margin: 0 0 5px 0;
+      }
+      .price-details {
+        margin: 0 0 10px 0;
+      }
+      .original-price {
+        text-decoration: line-through;
+        color: #6c757d;
+      }
+      .sale-price {
+        font-size: 1.2em;
+        color: #28a745;
+      }
+      .info-text {
+        color: #6c757d;
+        margin-bottom: 10px;
+      }
+      #cancellationParagraph {
+        display: none;
+      }
+
+      .status-message {
+        display: inline-block; /* Allows padding and makes it a "pill" */
+        padding: 6px 12px;
+        border-radius: 16px; /* Pill shape */
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      .status-premium {
+        background-color: #28a745; /* Positive green */
+        color: white;
+      }
+
+      #premium-status-container {
+        text-align: center; /* This centers the pill within its container */
+      }
+
+      .status-free {
+        background-color: #e9ecef; /* Neutral light gray */
+        color: #495057; /* Dark gray text for contrast */
+        border: 1px solid #dee2e6;
+      }
+
+      /* --- Premium Title Styles  --- */
+      .title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+      .premium-label {
+        color: #ffd700;
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        padding: 3px 6px;
+        border-radius: 3px;
+        background: rgba(0, 0, 0, 0.05);
+        position: relative;
+        top: -1px;
+      }
+
+      /* --- Buttons --- */
+      button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        transition: background-color 0.2s;
+      }
+      button:hover:not(:disabled) {
+        opacity: 0.9;
+      }
+      .action-button {
+        background-color: #007bff;
+      }
+      .proceed-button {
+        background-color: #28a745;
+      }
+      .cancel-button {
+        background-color: #dc3545;
+      }
+      .action-button:disabled,
+      button:disabled {
+        background-color: #cccccc !important;
+        color: #6c757d !important;
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>My App Name</h2>
+      <div id="premium-status-container"></div>
+      <div class="contain">
+        <!-- Dynamic content will be rendered here by main.js -->
+      </div>
+    </div>
+    <script src="main.bundle.js"></script>
+  </body>
+</html>

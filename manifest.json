@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Extension Stripe Template",
+  "version": "1.0.0",
+  "description": "A template for Chrome extensions using Google Auth and Stripe payments.",
+  "key": "YOUR CHROME EXTENSION PUBLIC KEY HERE (WITHOUT NEWLINES), THIS HAS TO BE REMOVED BEFORE PUBLISHING!",
+  "permissions": [
+    "identity",
+    "identity.email",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://script.google.com/",
+    "https://script.googleusercontent.com/"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icon_sample_16.png",
+      "48": "icon_sample_48.png",
+      "128": "icon_sample_128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
+  "oauth2": {
+    "client_id": "YOUR EXTENSION PROJECT CLIENT ID FROM GOOGLE CLOUD DEVELOPER CONSOLE",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  },
+  "icons": {
+    "16": "icon_sample_16.png",
+    "48": "icon_sample_48.png",
+    "128": "icon_sample_128.png"
+  }
+}
